@@ -1,0 +1,48 @@
+.templeall {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* เริ่มต้นที่ 2 คอลัมน์ */
+  gap: 10px;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  justify-content: center;
+}
+.amount-option {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 30px;
+}
+.wat {
+  width: 300px;
+  height: 300px;
+  border: 2px solid red;
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.wat.hidden {
+  opacity: 0; /* ซ่อนรูป */
+  pointer-events: none; /* ไม่ให้มีผลต่อการคลิก */
+}
+
+.wat img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wat span {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+}

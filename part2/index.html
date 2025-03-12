@@ -7,12 +7,54 @@
     <title>Document</title>
   </head>
   <body>
-    <div>TEMPLE BY REGION</div>
-    <div class="templeall" id="temp">
-      <div class="wat" id="watthai "></div>
-      <div class="wat" id="watthai "></div>
-      <div class="wat" id="watthai "></div>
-      <div class="wat" id="watthai "></div>
+    <div style="text-align: center">TEMPLE BY REGION</div>
+    <div class="amount-option">
+      <div>จำนวนรูปภาพ</div>
+      <form>
+        <select id="show" name="showtemp">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </form>
     </div>
+
+    <div class="templeall" id="temp">
+      <div class="wat" id="watthai ">
+        <img src="img/วัดภาคเหนือ.jpg" /><span>ภาคเหนือ</span>
+      </div>
+      <div class="wat" id="watthai ">
+        <img src="img/วัดภาคตะวันตก.jpg" /><span>วัดภาคตะวันตก</span>
+      </div>
+      <div class="wat" id="watthai ">
+        <img src="img/วัดภาคตะวันออกเฉียงเหนือ.jpg" /><span
+          >ภาคตะวันออกเฉียงเหนือ</span
+        >
+      </div>
+      <div class="wat" id="watthai ">
+        <img src="img/วัดภาคใต้.jpg" /><span>ภาคใต้</span>
+      </div>
+    </div>
+    <script>
+      const selectElement = document.getElementById("show");
+      const templeContainer = document.getElementById("temp");
+      const templeItems = document.querySelectorAll(".wat");
+
+      selectElement.addEventListener("change", function () {
+        const selectedValue = parseInt(this.value);
+
+        templeContainer.style.gridTemplateColumns = `repeat(${selectedValue}, 1fr)`;
+
+        templeItems.forEach((item, index) => {
+          if (index < selectedValue) {
+            item.classList.remove("hidden");
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+      });
+
+      selectElement.dispatchEvent(new Event("change"));
+    </script>
   </body>
 </html>
