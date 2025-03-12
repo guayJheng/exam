@@ -1,6 +1,6 @@
 .templeall {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* เริ่มต้นที่ 2 คอลัมน์ */
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   width: 100%;
   max-width: 900px;
@@ -23,8 +23,8 @@
 }
 
 .wat.hidden {
-  opacity: 0; /* ซ่อนรูป */
-  pointer-events: none; /* ไม่ให้มีผลต่อการคลิก */
+  opacity: 0;
+  pointer-events: none;
 }
 
 .wat img {
